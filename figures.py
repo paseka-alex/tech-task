@@ -74,10 +74,11 @@ class Rectangle(Polygon):
             points = self.rect_points(bottom_left, top_right)
             self.width = round(points[1][0] - points[0][0], 3)
             self.height = round(points[2][1] - points[1][1], 3)
-        else:
-            points = []
+        else:           
             self.width = abs(width)
             self.height = abs(height)
+            
+            points = [(0,0), (0, height), (width, height), (width, 0)]
 
         super().__init__(name, sides=4, points=points)
     
@@ -88,11 +89,6 @@ class Rectangle(Polygon):
             top_right,
             (bottom_left[0], top_right[1])
         ]
-    
-    def area(self) -> float:
-        return round(self.width * self.height, 3) if self.width and self.height else 0
-    def perimeter(self) -> float:
-        return round(2 * (self.width + self.height), 3) if self.width and self.height else 0  
     
 class Square(Rectangle):
     def __init__(self, name='Square', side_length: float = 1.0, top_right: tuple = None):
