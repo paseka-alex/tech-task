@@ -99,12 +99,6 @@ class Square(Rectangle):
         super().__init__(name, width=side_length, height=side_length, top_right=top_right)
         self.side_length = abs(side_length)
 
-    def area(self) -> float:
-        return self.side_length ** 2
-
-    def perimeter(self) -> float:
-        return 4 * self.side_length
-
 class Circle(Figure):
     def __init__(self, name='Circle', radius: float = 1.0, center: tuple = (0, 0)):
         super().__init__(name, sides=None, points=[center])
