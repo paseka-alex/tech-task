@@ -25,7 +25,7 @@ def convert_fig(str):
             case _:
                 return "unknown figure!"
     except Exception as e:
-        return "wrong syntax! write full figure name + needed params."
+        return f"wrong syntax! write full figure name + needed params. {e}"
 
 
 if __name__ == "__main__":

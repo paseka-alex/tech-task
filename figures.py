@@ -24,7 +24,7 @@ there are easier formulas that can be executed.
 class Figure:
     def __init__(self, name='Figure', sides: int = None, points: list = None):
         self.name = name
-        self.sides = abs(sides)
+        self.sides = sides
         self.points = points if points is not None else []
 
     def area(self) -> float:
